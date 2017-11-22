@@ -1,15 +1,14 @@
-BUILD_DIR=build
+BUILD_DIR=docs
 PYTHON=`which python`
-LEKTOR=`which lektor`
+PELICAN=`which pelican`
 
 server:
-	$(LEKTOR) server -h 0.0.0.0
+	cd ${BUILD_DIR};$(PYTHON) -m pelican.server
 
 gen:
-	$(LEKTOR) build --output-path=${BUILD_DIR}
+	$(PELICAN) content
 
-deploy: gen
-	./deploy.sh
+deploy: gen commit push
 
 status:
 	git status
