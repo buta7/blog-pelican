@@ -77,7 +77,9 @@ initialize repository
     $ git init
     $ git add .
     $ git commit -m 'First commit'
-    $ git remote add origin git@github.com:higebobo/blog-lektor.git
+    $ git remote add origin git@github.com:higebobo/blog-pelican.git
     $ git remote -v
     $ git push -u origin master
+    
+set github pages master/docs
     
