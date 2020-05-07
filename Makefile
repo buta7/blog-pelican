@@ -1,28 +1,30 @@
+MAKEFLAGS += --warn-undefined-variables
+SHELL := /bin/bash
+.SHELLFLAGS := -eu -o pipefail -c
+.DEFAULT_GOAL := run
+
+# all targets are phony
+.PHONY: $(shell egrep -o ^[a-zA-Z_-]+: $(MAKEFILE_LIST) | sed 's/://')
+
+# .env
+ifneq ("$(wildcard ./.env)","")
+  include ./.env
+endif
+
 BUILD_DIR=docs
-PYTHON=`which python`
-PELICAN=`which pelican`
 
-server:
-	cd ${BUILD_DIR};$(PYTHON) -m pelican.server
+run: ## Run server
+	@cd ${BUILD_DIR}
+	@python -m pelican.server
 
-gen:
-	$(PELICAN) content
+build: ## Build static html files
+	pelican content
 
-deploy: gen commit push
+deploy: build ## Deploy on github
+	@sh ./deploy.sh
 
-status:
-	git status
-
-add:
-	git add .
-
-commit: add
-	git commit -m 'modify'
-
-pull:
-	git pull
-
-push:
-	git push -u origin master
-
-commit-push: commit push
+help: ## Print this help
+	@echo 'Usage: make [target]'
+	@echo ''
+	@echo 'Targets:'
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
