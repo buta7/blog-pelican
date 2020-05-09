@@ -44,4 +44,4 @@ PLUGINS = ['assets']
 THEME = './themes/eevee'
 
 # Chagen output path for github pages
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
