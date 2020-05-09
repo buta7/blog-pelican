@@ -36,16 +36,12 @@ DEFAULT_PAGINATION = 10
 
 # Plugins
 # git clone --recursive https://github.com/getpelican/pelican-plugins plugins
-PLUGINS = [
-    'assets'
-]
-
-PLUGIN_PATHS = ['plugins']
+PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['assets']
 
 # Theme
 # git clone --recursive https://github.com/getpelican/pelican-themes.git themes
-THEME = 'themes/eevee'
+THEME = './themes/eevee'
 
 # Chagen output path for github pages
 #RELATIVE_URLS = True
