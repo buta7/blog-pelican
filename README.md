@@ -1,6 +1,8 @@
 <!-- -*- mode: markdown; coding: utf-8 -*- -->
 # Pelican
 
+> eevee テーマのcssのパスがルートからになるし全体的にイマイチ(2020/05/09)
+
 ## Install
 
 pip

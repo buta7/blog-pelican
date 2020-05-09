@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'higebobo'
 SITENAME = 'Higebobo Blog'
-SITEURL = 'https://higebobo.github.io/blog-pelican'
+SITEURL = ''
 
 PATH = 'content'
 
@@ -32,7 +32,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 # Plugins
 # git clone --recursive https://github.com/getpelican/pelican-plugins plugins
@@ -41,7 +41,5 @@ PLUGINS = ['assets']
 
 # Theme
 # git clone --recursive https://github.com/getpelican/pelican-themes.git themes
-THEME = './themes/eevee'
-
-# Chagen output path for github pages
-RELATIVE_URLS = True
+#THEME = './themes/eevee'
+THEME = 'eevee'
