@@ -54,9 +54,17 @@ create an article
 
 generate site
 
+    $ make html
+    
+or
+
     $ pelican content
 
 preview site
+
+    $ make serve
+    
+or
 
     $ cd docs
     $ python -m pelican.server
@@ -83,3 +91,19 @@ initialize repository
     
 set github pages master/docs
     
+## Change theme
+
+show list
+
+    $ pelican-themes --list
+
+install
+
+    $ pelican-themes --install ../themes/eevee --verbose
+
+
+
+## Link
+
+* [Python製 Pelican を使ってサクッとブログを公開する \- Qiita](https://qiita.com/saira/items/71faa202efb4320cb41d)
+* [kura/eevee at a7b708192462387b5087ff200df5b4c768ddb192](https://github.com/kura/eevee/tree/a7b708192462387b5087ff200df5b4c768ddb192)

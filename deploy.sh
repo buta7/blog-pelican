@@ -1,14 +1,9 @@
-#!/bin/bash
+# !/bin/bash
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
-# Build the project.
-#lektor build --output-path=build
-
-# Go To Output folder
-cd build
 # Add changes to git.
-git add .
+git add -A
 
 # Commit changes.
 msg="rebuilding site `date`"
@@ -18,11 +13,4 @@ fi
 git commit -m "$msg"
 
 # Push source and build repos.
-git push -u origin master
-
-# Come Back up to the Project Root
-cd ..
-
-git add .
-git commit -m "$msg"
-git push -u origin master
+git push origin master

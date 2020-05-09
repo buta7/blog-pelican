@@ -1,4 +1,5 @@
 *~
 *.bak
 *.pyc
+*.orig
 __pycache__
