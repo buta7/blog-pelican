@@ -42,4 +42,4 @@ PLUGINS = ['assets']
 # Theme
 # git clone --recursive https://github.com/getpelican/pelican-themes.git themes
 #THEME = './themes/eevee'
-THEME = 'eevee'
+#THEME = 'eevee'
